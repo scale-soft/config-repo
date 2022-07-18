@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: user-service
+server:
+  port: 8100
+
+user-service:
+  test-value: prodVal
