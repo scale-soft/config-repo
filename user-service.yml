@@ -1,8 +1,19 @@
 spring:
   application:
     name: user-service
+  config:
+    import: optional:configserver:http://root:s3cr3t@localhost:8888
+  profiles:
+    active: prod
 server:
   port: 8100
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
 
 user-service:
-  test-value: testVal
+  test-value: testLocal
